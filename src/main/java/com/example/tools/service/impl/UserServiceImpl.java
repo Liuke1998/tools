@@ -4,9 +4,11 @@ import com.example.tools.entry.User;
 import com.example.tools.exception.BusinessException;
 import com.example.tools.mapper.UserMapper;
 import com.example.tools.service.IUserService;
+import com.example.tools.util.SessionUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 @Service
 public class UserServiceImpl implements IUserService {
@@ -32,5 +34,8 @@ public class UserServiceImpl implements IUserService {
         if (!selectUser.getPassword().equals(user.getPassword())){
             throw new BusinessException("密码错误");
         }
+        selectUser.setLastLoginDate(new Date());
+        SessionUtil.setLoginInfo(selectUser);
+        userMapper.updateByPrimaryKeySelective(selectUser);
     }
 }

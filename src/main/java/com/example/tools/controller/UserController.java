@@ -2,6 +2,7 @@ package com.example.tools.controller;
 
 import com.example.tools.entry.User;
 import com.example.tools.exception.BusinessException;
+import com.example.tools.response.RestResponse;
 import com.example.tools.service.IUserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,22 +25,22 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
-    public ResponseEntity register(@RequestBody User user){
+    public RestResponse register(@RequestBody User user){
         try {
             userService.register(user);
-            return ResponseEntity.ok("注册成功");
+            return RestResponse.createSuccessResult("注册成功");
         } catch (BusinessException e){
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return RestResponse.createResult(401, e.getMessage());
         }
     }
 
     @PostMapping("/login")
-    public ResponseEntity login(@RequestBody User user){
+    public RestResponse login(@RequestBody User user){
         try {
             userService.login(user);
-            return ResponseEntity.ok("登录成功");
+            return RestResponse.createSuccessResult("登录成功");
         } catch (BusinessException e){
-            return ResponseEntity.badRequest().body(e.getMessage());
+            return RestResponse.createResult(402, e.getMessage());
         }
     }
 }

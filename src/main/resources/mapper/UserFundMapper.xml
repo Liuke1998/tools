@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.tools.mapper.UserFundMapper">
+  <resultMap id="BaseResultMap" type="com.example.tools.entry.UserFund">
+    <id column="id" property="id" />
+    <result column="name" property="name" />
+    <result column="code" property="code" />
+    <result column="num" property="num" />
+    <result column="userId" property="userId" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, name, `code`, num, userId, createDate
+  </sql>
+  <insert id="insert" parameterType="com.example.tools.entry.UserFund">
+    insert into user_fund(name,code,num,userId,createDate) value(#{name},#{code},#{num},#{userId},now())
+  </insert>
+
+</mapper>

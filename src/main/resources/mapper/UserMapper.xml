@@ -6,9 +6,10 @@
     <result column="username" jdbcType="VARCHAR" property="username" />
     <result column="password" jdbcType="VARCHAR" property="password" />
     <result column="createDate" jdbcType="TIMESTAMP" property="createDate" />
+    <result column="lastLoginDate" jdbcType="TIMESTAMP" property="lastLoginDate" />
   </resultMap>
   <sql id="Base_Column_List">
-    id, username, `password`, createDate
+    id, username, `password`, createDate, lastLoginDate
   </sql>
   <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
     select 
