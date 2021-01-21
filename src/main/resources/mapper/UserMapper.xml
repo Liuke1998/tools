@@ -16,7 +16,7 @@
     from user
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from user
     where id = #{id,jdbcType=INTEGER}
   </delete>
@@ -73,4 +73,10 @@
       createDate = #{createDate,jdbcType=TIMESTAMP}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  <select id="selectByUsername" resultType="com.example.tools.entry.User">
+    select *
+    from user
+    where username = #{username}
+    limit 1
+  </select>
 </mapper>

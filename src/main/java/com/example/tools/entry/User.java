@@ -1,8 +1,9 @@
 package com.example.tools.entry;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.util.Date;
-import lombok.Data;
 
 /**
  * user
@@ -10,6 +11,7 @@ import lombok.Data;
  */
 @Data
 public class User implements Serializable {
+
     private Integer id;
 
     private String username;
