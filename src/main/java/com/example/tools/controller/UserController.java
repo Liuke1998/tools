@@ -28,7 +28,7 @@ public class UserController {
     public RestResponse register(@RequestBody User user){
         try {
             userService.register(user);
-            return RestResponse.createSuccessResult("注册成功");
+            return RestResponse.createSuccessResult();
         } catch (BusinessException e){
             return RestResponse.createResult(401, e.getMessage());
         }
@@ -38,7 +38,7 @@ public class UserController {
     public RestResponse login(@RequestBody User user){
         try {
             userService.login(user);
-            return RestResponse.createSuccessResult("登录成功");
+            return RestResponse.createSuccessResult();
         } catch (BusinessException e){
             return RestResponse.createResult(402, e.getMessage());
         }

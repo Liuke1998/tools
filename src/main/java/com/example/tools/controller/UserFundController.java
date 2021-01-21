@@ -27,7 +27,7 @@ public class UserFundController {
     public RestResponse add(@RequestBody UserFund userFund){
         try {
             userFundService.add(userFund);
-            return RestResponse.createSuccessResult("添加成功");
+            return RestResponse.createSuccessResult();
         } catch (BusinessException e){
             return RestResponse.createResult(401, e.getMessage());
         }
