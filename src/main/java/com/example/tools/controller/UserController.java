@@ -1,5 +1,6 @@
 package com.example.tools.controller;
 
+import com.example.tools.anno.NotNeedLogin;
 import com.example.tools.entry.User;
 import com.example.tools.exception.BusinessException;
 import com.example.tools.response.RestResponse;
@@ -25,6 +26,7 @@ public class UserController {
      * @return
      */
     @PostMapping("/register")
+    @NotNeedLogin
     public RestResponse register(@RequestBody User user){
         try {
             userService.register(user);
@@ -35,6 +37,7 @@ public class UserController {
     }
 
     @PostMapping("/login")
+    @NotNeedLogin
     public RestResponse login(@RequestBody User user){
         try {
             userService.login(user);
