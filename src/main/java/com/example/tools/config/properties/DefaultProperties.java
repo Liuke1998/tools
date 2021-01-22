@@ -16,4 +16,10 @@ public class DefaultProperties {
         return new HttpClientProperties();
     }
 
+    @Bean
+    @ConfigurationProperties(prefix = "spring.mail")
+    public MailProperties MailProperties(){
+        return new MailProperties();
+    }
+
 }
