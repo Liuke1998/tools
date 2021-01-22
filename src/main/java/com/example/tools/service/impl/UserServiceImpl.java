@@ -6,11 +6,13 @@ import com.example.tools.mapper.UserMapper;
 import com.example.tools.service.IUserService;
 import com.example.tools.util.SessionUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.Date;
 
 @Service
+@Transactional
 public class UserServiceImpl implements IUserService {
 
     @Resource

@@ -20,7 +20,7 @@ public class FundController {
 
     @GetMapping("/getFundByCode")
     public RestResponse getFundByCode(String code){
-        long time = new Date().getTime();
+        long time = System.currentTimeMillis();
         String url =  String.format("http://fundgz.1234567.com.cn/js/%s.js?rt=%s", code, time);
         String result = null;
         try {

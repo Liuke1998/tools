@@ -1,10 +1,7 @@
 package com.example.tools.interceptor;
 
-
 import com.example.tools.anno.NotNeedLogin;
-import com.example.tools.entry.User;
 import com.example.tools.util.SessionUtil;
-import org.apache.commons.lang.StringUtils;
 import org.springframework.stereotype.Component;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
